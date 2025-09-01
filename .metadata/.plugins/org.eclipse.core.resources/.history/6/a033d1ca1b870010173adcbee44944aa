@@ -1,0 +1,5 @@
+package com.surya.patient.controller;
+
+public class PatientController {
+
+}

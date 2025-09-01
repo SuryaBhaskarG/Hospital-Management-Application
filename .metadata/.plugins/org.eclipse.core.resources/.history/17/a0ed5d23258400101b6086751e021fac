@@ -1,0 +1,57 @@
+package com.example.surya.config;
+
+import org.springframework.cloud.gateway.filter.GatewayFilterChain;
+import org.springframework.cloud.gateway.filter.GlobalFilter;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.stereotype.Component;
+import org.springframework.web.server.ServerWebExchange;
+
+import lombok.RequiredArgsConstructor;
+import reactor.core.publisher.Mono;
+
+@Component
+@RequiredArgsConstructor
+public class JwtAuthFilter implements GlobalFilter {
+
+    private final JwtUtil jwtUtil; // reuse JwtUtil logic from Auth service (you can move it to a common lib)
+
+    @Override
+    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+        ServerHttpRequest request = exchange.getRequest();
+
+        // Skip Auth service routes
+        if (request.getURI().getPath().contains("/api/auth")) {
+            return chain.filter(exchange);
+        }
+
+        // Extract Authorization header
+        String authHeader = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
+            return exchange.getResponse().setComplete();
+        }
+
+        String token = authHeader.substring(7);
+
+        try {
+            if (!jwtUtil.isTokenValid(token)) {
+                exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
+                return exchange.getResponse().setComplete();
+            }
+
+            // Optionally: add user info/role to headers for downstream services
+            String username = jwtUtil.extractUserName(token);
+            ServerHttpRequest mutatedRequest = exchange.getRequest().mutate()
+                    .header("X-User-Email", username)
+                    .build();
+
+            return chain.filter(exchange.mutate().request(mutatedRequest).build());
+
+        } catch (Exception e) {
+            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
+            return exchange.getResponse().setComplete();
+        }
+    }
+}

@@ -1,0 +1,43 @@
+package com.surya.doctor;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import lombok.RequiredArgsConstructor;
+
+import java.util.List;
+
+@RequiredArgsConstructor
+@RestController
+@RequestMapping("/api/v1/doctors")
+public class DoctorController {
+
+    @Autowired
+    private final DoctorService doctorService;
+
+    // Create Doctor
+    @PostMapping("/create")
+    public ResponseEntity<Doctor> createDoctor(@RequestBody Doctor doctor) {
+        Doctor savedDoctor = doctorService.createDoctor(doctor);
+        return ResponseEntity.ok(savedDoctor);
+    }
+
+    // Get Doctor by ID
+    @GetMapping("/{id}")
+    public ResponseEntity<Doctor> getDoctorById(@PathVariable Long id) {
+        Doctor doctor = doctorService.getDoctorById(id);
+        if (doctor != null) {
+            return ResponseEntity.ok(doctor);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    // Get All Doctors
+    @GetMapping("/all")
+    public ResponseEntity<List<Doctor>> getAllDoctors() {
+        return ResponseEntity.ok(doctorService.getAllDoctors());
+    }
+}

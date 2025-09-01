@@ -1,0 +1,5 @@
+package com.surya.doctor;
+
+public class DoctorController {
+
+}

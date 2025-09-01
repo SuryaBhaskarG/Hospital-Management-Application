@@ -1,0 +1,5 @@
+package com.surya.patient.service;
+
+public class PatientServiceImpl {
+
+}

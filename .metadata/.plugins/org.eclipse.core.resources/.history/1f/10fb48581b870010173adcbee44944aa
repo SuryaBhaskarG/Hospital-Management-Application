@@ -1,0 +1,5 @@
+package com.surya.patient.entity;
+
+public class Patient {
+
+}

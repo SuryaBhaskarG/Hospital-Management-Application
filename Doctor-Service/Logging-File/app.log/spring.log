@@ -1,0 +1,765 @@
+2025-09-01T15:10:50.544+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] c.surya.doctor.DoctorServiceApplication  : Starting DoctorServiceApplication using Java 21.0.7 with PID 4020 (E:\STS Workspace\Doctor-Service\target\classes started by asus in E:\STS Workspace\Doctor-Service)
+2025-09-01T15:10:50.545+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] c.surya.doctor.DoctorServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-09-01T15:10:50.579+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9093
+2025-09-01T15:10:50.579+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=DOCTOR-SERVICE, profiles=[default], label=null, version=14dadc3e11ddbe0225635e5e5bfece5c2269a127, state=
+2025-09-01T15:10:50.581+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-01T15:10:50.582+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-01T15:10:51.179+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T15:10:51.295+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 1 JPA repository interface.
+2025-09-01T15:10:51.534+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5023a81f-5514-38c8-ae21-90ca6d8e2ee1
+2025-09-01T15:10:51.942+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2025-09-01T15:10:51.979+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T15:10:51.980+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T15:10:52.022+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T15:10:52.023+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1440 ms
+2025-09-01T15:10:52.159+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T15:10:52.200+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-01T15:10:52.226+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T15:10:52.481+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T15:10:52.504+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-01T15:10:53.213+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b7f4bc
+2025-09-01T15:10:53.214+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-01T15:10:53.301+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T15:10:53.966+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T15:10:54.027+05:30 DEBUG 4020 --- [DOCTOR-SERVICE] [restartedMain] org.hibernate.SQL                        : 
+    create table doctors (
+        id bigint not null auto_increment,
+        age integer not null,
+        doctor_email varchar(255),
+        doctor_name varchar(255),
+        domain varchar(255),
+        experience integer not null,
+        gender varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2025-09-01T15:10:54.061+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T15:10:54.264+05:30  WARN 4020 --- [DOCTOR-SERVICE] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-01T15:10:54.674+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-01T15:10:54.725+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-09-01T15:10:54.761+05:30  WARN 4020 --- [DOCTOR-SERVICE] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-09-01T15:10:54.825+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-09-01T15:10:54.847+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-09-01T15:10:54.849+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T15:10:54.857+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-09-01T15:10:54.857+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-09-01T15:10:54.857+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-09-01T15:10:54.857+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-09-01T15:10:54.857+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-09-01T15:10:54.857+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-09-01T15:10:54.857+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-09-01T15:10:55.045+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-09-01T15:10:55.046+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-09-01T15:10:55.047+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-09-01T15:10:55.048+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1756719655048 with initial instances count: 0
+2025-09-01T15:10:55.052+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DOCTOR-SERVICE with eureka with status UP
+2025-09-01T15:10:55.052+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756719655052, current=UP, previous=STARTING]
+2025-09-01T15:10:55.054+05:30  INFO 4020 --- [DOCTOR-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOCTOR-SERVICE/DESKTOP-GVALKHS.mshome.net:DOCTOR-SERVICE:8087: registering service...
+2025-09-01T15:10:55.072+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/'
+2025-09-01T15:10:55.074+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8087
+2025-09-01T15:10:55.090+05:30  INFO 4020 --- [DOCTOR-SERVICE] [restartedMain] c.surya.doctor.DoctorServiceApplication  : Started DoctorServiceApplication in 8.349 seconds (process running for 9.147)
+2025-09-01T15:10:55.100+05:30  INFO 4020 --- [DOCTOR-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOCTOR-SERVICE/DESKTOP-GVALKHS.mshome.net:DOCTOR-SERVICE:8087 - registration status: 204
+2025-09-01T15:11:25.059+05:30  INFO 4020 --- [DOCTOR-SERVICE] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-09-01T15:11:25.059+05:30  INFO 4020 --- [DOCTOR-SERVICE] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-09-01T15:11:25.059+05:30  INFO 4020 --- [DOCTOR-SERVICE] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-09-01T15:11:25.060+05:30  INFO 4020 --- [DOCTOR-SERVICE] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-09-01T15:11:25.060+05:30  INFO 4020 --- [DOCTOR-SERVICE] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-09-01T15:11:25.060+05:30  INFO 4020 --- [DOCTOR-SERVICE] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2025-09-01T15:11:25.060+05:30  INFO 4020 --- [DOCTOR-SERVICE] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-09-01T15:11:25.086+05:30  INFO 4020 --- [DOCTOR-SERVICE] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-09-01T15:14:43.017+05:30  INFO 4020 --- [DOCTOR-SERVICE] [http-nio-8087-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-01T15:14:43.017+05:30  INFO 4020 --- [DOCTOR-SERVICE] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-01T15:14:43.019+05:30  INFO 4020 --- [DOCTOR-SERVICE] [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-09-01T15:14:43.131+05:30 DEBUG 4020 --- [DOCTOR-SERVICE] [http-nio-8087-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        doctors
+        (age, doctor_email, doctor_name, domain, experience, gender) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-09-01T15:15:20.671+05:30 DEBUG 4020 --- [DOCTOR-SERVICE] [http-nio-8087-exec-3] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0 
+    where
+        d1_0.id=?
+2025-09-01T15:15:44.587+05:30 DEBUG 4020 --- [DOCTOR-SERVICE] [http-nio-8087-exec-4] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0
+2025-09-01T15:15:54.871+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T15:20:54.884+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T15:25:54.888+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T15:30:54.893+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T15:35:54.906+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T15:40:54.915+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T15:45:54.933+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T15:50:54.946+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T15:55:54.961+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:00:54.967+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:05:54.978+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:10:54.993+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:15:55.004+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:20:55.017+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:25:55.033+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:30:55.048+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:35:55.059+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:40:55.074+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:45:55.091+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:50:55.106+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:55:55.116+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T17:00:55.130+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T17:02:50.030+05:30 DEBUG 4020 --- [DOCTOR-SERVICE] [http-nio-8087-exec-6] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0 
+    where
+        d1_0.id=?
+2025-09-01T17:03:06.338+05:30 DEBUG 4020 --- [DOCTOR-SERVICE] [http-nio-8087-exec-7] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0 
+    where
+        d1_0.id=?
+2025-09-01T17:05:55.142+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T17:10:55.162+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T17:15:55.176+05:30  INFO 4020 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T17:23:16.960+05:30  WARN 4020 --- [DOCTOR-SERVICE] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m21s681ms254µs600ns).
+2025-09-01T18:22:18.541+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] c.surya.doctor.DoctorServiceApplication  : Starting DoctorServiceApplication using Java 21.0.7 with PID 13532 (E:\STS Workspace\Doctor-Service\target\classes started by asus in E:\STS Workspace\Doctor-Service)
+2025-09-01T18:22:18.549+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] c.surya.doctor.DoctorServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-09-01T18:22:18.607+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9093
+2025-09-01T18:22:18.608+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=DOCTOR-SERVICE, profiles=[default], label=null, version=14dadc3e11ddbe0225635e5e5bfece5c2269a127, state=
+2025-09-01T18:22:18.610+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-01T18:22:18.610+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-01T18:22:19.626+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T18:22:19.910+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 268 ms. Found 1 JPA repository interface.
+2025-09-01T18:22:20.345+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5023a81f-5514-38c8-ae21-90ca6d8e2ee1
+2025-09-01T18:22:21.150+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2025-09-01T18:22:21.173+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T18:22:21.174+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T18:22:21.254+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T18:22:21.254+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2643 ms
+2025-09-01T18:22:21.577+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T18:22:21.652+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-01T18:22:21.699+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T18:22:22.116+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T18:22:22.159+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-01T18:22:22.721+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7abedd68
+2025-09-01T18:22:22.724+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-01T18:22:22.841+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T18:22:24.083+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T18:22:24.152+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T18:22:24.529+05:30  WARN 13532 --- [DOCTOR-SERVICE] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-01T18:22:25.342+05:30  WARN 13532 --- [DOCTOR-SERVICE] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-01T18:22:25.431+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-09-01T18:22:25.523+05:30  WARN 13532 --- [DOCTOR-SERVICE] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-09-01T18:22:25.660+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-09-01T18:22:25.700+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-09-01T18:22:25.706+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:22:25.719+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-09-01T18:22:25.719+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-09-01T18:22:25.719+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-09-01T18:22:25.720+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-09-01T18:22:25.720+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-09-01T18:22:25.720+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-09-01T18:22:25.720+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-09-01T18:22:26.153+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-09-01T18:22:26.156+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-09-01T18:22:26.158+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-09-01T18:22:26.160+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1756731146160 with initial instances count: 3
+2025-09-01T18:22:26.165+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DOCTOR-SERVICE with eureka with status UP
+2025-09-01T18:22:26.166+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756731146166, current=UP, previous=STARTING]
+2025-09-01T18:22:26.169+05:30  INFO 13532 --- [DOCTOR-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOCTOR-SERVICE/DESKTOP-GVALKHS.mshome.net:DOCTOR-SERVICE:8087: registering service...
+2025-09-01T18:22:26.194+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/'
+2025-09-01T18:22:26.195+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8087
+2025-09-01T18:22:26.217+05:30  INFO 13532 --- [DOCTOR-SERVICE] [restartedMain] c.surya.doctor.DoctorServiceApplication  : Started DoctorServiceApplication in 9.797 seconds (process running for 10.858)
+2025-09-01T18:22:26.227+05:30  INFO 13532 --- [DOCTOR-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOCTOR-SERVICE/DESKTOP-GVALKHS.mshome.net:DOCTOR-SERVICE:8087 - registration status: 204
+2025-09-01T18:27:25.727+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:32:25.732+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:37:25.756+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:42:25.764+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:47:25.776+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:52:25.789+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:57:25.791+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:02:25.793+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:07:25.808+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:10:59.776+05:30  INFO 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-01T19:10:59.776+05:30  INFO 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-01T19:10:59.788+05:30  INFO 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2025-09-01T19:12:25.814+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:17:25.820+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:17:42.917+05:30 DEBUG 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-6] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0
+2025-09-01T19:19:20.961+05:30 DEBUG 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-8] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0
+2025-09-01T19:20:04.321+05:30 DEBUG 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-9] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0
+2025-09-01T19:20:34.003+05:30 DEBUG 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-10] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0
+2025-09-01T19:22:25.830+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:27:25.834+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:28:16.197+05:30 DEBUG 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-2] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0
+2025-09-01T19:28:17.558+05:30 DEBUG 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-3] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0
+2025-09-01T19:28:19.455+05:30 DEBUG 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-4] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0
+2025-09-01T19:32:25.835+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:37:25.838+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:42:25.840+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:47:25.843+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:51:45.548+05:30 DEBUG 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-6] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0
+2025-09-01T19:52:25.850+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:57:25.858+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:02:25.863+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:06:30.224+05:30 DEBUG 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-8] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0
+2025-09-01T20:06:31.538+05:30 DEBUG 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-9] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0
+2025-09-01T20:06:32.333+05:30 DEBUG 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-10] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0
+2025-09-01T20:07:25.872+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:12:25.880+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:17:25.886+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:22:25.911+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:27:25.914+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:32:25.925+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:37:25.931+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:42:25.946+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:47:25.959+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:52:25.963+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:57:25.977+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:02:25.980+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:07:25.991+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:12:26.004+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:17:26.010+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:22:26.015+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:27:26.017+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:32:26.028+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:37:26.043+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:42:26.049+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:47:26.062+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:52:26.068+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:57:26.071+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:01:21.213+05:30 DEBUG 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-2] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0 
+    where
+        d1_0.id=?
+2025-09-01T22:02:04.187+05:30 DEBUG 13532 --- [DOCTOR-SERVICE] [http-nio-8087-exec-3] org.hibernate.SQL                        : 
+    select
+        d1_0.id,
+        d1_0.age,
+        d1_0.doctor_email,
+        d1_0.doctor_name,
+        d1_0.domain,
+        d1_0.experience,
+        d1_0.gender 
+    from
+        doctors d1_0 
+    where
+        d1_0.id=?
+2025-09-01T22:02:26.078+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:07:26.092+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:12:26.100+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:17:26.102+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:22:26.106+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:27:26.124+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:32:26.131+05:30  INFO 13532 --- [DOCTOR-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:36:07.420+05:30  INFO 13532 --- [DOCTOR-SERVICE] [RMI TCP Connection(263)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-09-01T22:36:07.432+05:30  INFO 13532 --- [DOCTOR-SERVICE] [RMI TCP Connection(263)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DOCTOR-SERVICE with eureka with status DOWN
+2025-09-01T22:36:07.432+05:30  INFO 13532 --- [DOCTOR-SERVICE] [RMI TCP Connection(263)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756746367432, current=DOWN, previous=UP]
+2025-09-01T22:36:07.433+05:30  INFO 13532 --- [DOCTOR-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOCTOR-SERVICE/DESKTOP-GVALKHS.mshome.net:DOCTOR-SERVICE:8087: registering service...
+2025-09-01T22:36:07.453+05:30  INFO 13532 --- [DOCTOR-SERVICE] [RMI TCP Connection(263)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-01T22:36:07.466+05:30  INFO 13532 --- [DOCTOR-SERVICE] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-01T22:36:07.481+05:30  INFO 13532 --- [DOCTOR-SERVICE] [RMI TCP Connection(263)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T22:36:07.484+05:30  INFO 13532 --- [DOCTOR-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/DOCTOR-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/DOCTOR-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:205)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 21 more
+
+2025-09-01T22:36:07.485+05:30  WARN 13532 --- [DOCTOR-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/DOCTOR-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2025-09-01T22:36:07.496+05:30  INFO 13532 --- [DOCTOR-SERVICE] [RMI TCP Connection(263)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-01T22:36:07.499+05:30  INFO 13532 --- [DOCTOR-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/DOCTOR-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/DOCTOR-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:205)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 22 more
+
+2025-09-01T22:36:07.499+05:30  WARN 13532 --- [DOCTOR-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/DOCTOR-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2025-09-01T22:36:07.505+05:30  INFO 13532 --- [DOCTOR-SERVICE] [RMI TCP Connection(263)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-01T22:36:07.507+05:30  INFO 13532 --- [DOCTOR-SERVICE] [RMI TCP Connection(263)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-09-01T22:36:07.499+05:30  WARN 13532 --- [DOCTOR-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOCTOR-SERVICE/DESKTOP-GVALKHS.mshome.net:DOCTOR-SERVICE:8087 - registration failed Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105) ~[eureka-client-2.0.4.jar:2.0.4]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-09-01T22:36:07.515+05:30  WARN 13532 --- [DOCTOR-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105) ~[eureka-client-2.0.4.jar:2.0.4]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-09-01T22:36:07.516+05:30  INFO 13532 --- [DOCTOR-SERVICE] [RMI TCP Connection(263)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-09-01T22:36:07.543+05:30  INFO 13532 --- [DOCTOR-SERVICE] [RMI TCP Connection(263)-127.0.0.1] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOCTOR-SERVICE/DESKTOP-GVALKHS.mshome.net:DOCTOR-SERVICE:8087": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOCTOR-SERVICE/DESKTOP-GVALKHS.mshome.net:DOCTOR-SERVICE:8087": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:100)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:798)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:748)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1481)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:707)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1474)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:179)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:97)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:115)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:52)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:236)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:803)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:205)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 69 more
+
+2025-09-01T22:36:07.544+05:30  WARN 13532 --- [DOCTOR-SERVICE] [RMI TCP Connection(263)-127.0.0.1] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/DOCTOR-SERVICE/DESKTOP-GVALKHS.mshome.net:DOCTOR-SERVICE:8087": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2025-09-01T22:36:07.544+05:30 ERROR 13532 --- [DOCTOR-SERVICE] [RMI TCP Connection(263)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DOCTOR-SERVICE/DESKTOP-GVALKHS.mshome.net:DOCTOR-SERVICE:8087 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900) ~[eureka-client-2.0.4.jar:2.0.4]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387) ~[spring-cloud-context-4.3.0.jar:4.3.0]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134) ~[spring-cloud-context-4.3.0.jar:4.3.0]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:798) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:748) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1481) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:707) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1474) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:179) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160) ~[spring-boot-3.5.5.jar:3.5.5]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:97) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:115) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:52) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:236) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252) ~[na:na]
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:803) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802) ~[na:na]
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472) ~[na:na]
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310) ~[na:na]
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405) ~[na:na]
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360) ~[na:na]
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200) ~[na:na]
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197) ~[na:na]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714) ~[na:na]
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721) ~[na:na]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-09-01T22:36:07.547+05:30  INFO 13532 --- [DOCTOR-SERVICE] [RMI TCP Connection(263)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

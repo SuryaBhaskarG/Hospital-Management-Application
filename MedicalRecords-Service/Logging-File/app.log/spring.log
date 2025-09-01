@@ -1,0 +1,703 @@
+2025-09-01T16:02:13.449+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] c.s.m.MedicalRecordsServiceApplication   : Starting MedicalRecordsServiceApplication using Java 21.0.7 with PID 15612 (E:\STS Workspace\MedicalRecords-Service\target\classes started by asus in E:\STS Workspace\MedicalRecords-Service)
+2025-09-01T16:02:13.453+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] c.s.m.MedicalRecordsServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-09-01T16:02:13.524+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9093
+2025-09-01T16:02:13.525+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=MedicalRecords-Service, profiles=[default], label=null, version=14dadc3e11ddbe0225635e5e5bfece5c2269a127, state=
+2025-09-01T16:02:13.534+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-01T16:02:13.535+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-01T16:02:15.051+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T16:02:15.484+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 405 ms. Found 1 JPA repository interface.
+2025-09-01T16:02:15.805+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=314cae16-63a7-3570-8b86-970f702c39c3
+2025-09-01T16:02:16.367+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8089 (http)
+2025-09-01T16:02:16.383+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T16:02:16.383+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T16:02:16.446+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T16:02:16.446+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2910 ms
+2025-09-01T16:02:16.710+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T16:02:16.772+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-01T16:02:16.816+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T16:02:17.249+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T16:02:17.304+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-01T16:02:18.588+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@268eb11
+2025-09-01T16:02:18.590+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-01T16:02:18.685+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T16:02:19.707+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T16:02:19.770+05:30 DEBUG 15612 --- [MedicalRecords-Service] [restartedMain] org.hibernate.SQL                        : 
+    create table medical_records (
+        id bigint not null auto_increment,
+        date date,
+        description varchar(255),
+        disease varchar(255),
+        medicines varchar(255),
+        patient_id bigint,
+        primary key (id)
+    ) engine=InnoDB
+2025-09-01T16:02:19.799+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:02:20.255+05:30  WARN 15612 --- [MedicalRecords-Service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-01T16:02:20.935+05:30  WARN 15612 --- [MedicalRecords-Service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-01T16:02:21.029+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-09-01T16:02:21.082+05:30  WARN 15612 --- [MedicalRecords-Service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-09-01T16:02:21.155+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-09-01T16:02:21.187+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-09-01T16:02:21.192+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:02:21.205+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-09-01T16:02:21.205+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-09-01T16:02:21.205+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-09-01T16:02:21.205+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-09-01T16:02:21.205+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-09-01T16:02:21.205+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-09-01T16:02:21.205+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-09-01T16:02:21.514+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-09-01T16:02:21.518+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-09-01T16:02:21.523+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-09-01T16:02:21.526+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1756722741525 with initial instances count: 3
+2025-09-01T16:02:21.537+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MEDICALRECORDS-SERVICE with eureka with status UP
+2025-09-01T16:02:21.540+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756722741540, current=UP, previous=STARTING]
+2025-09-01T16:02:21.544+05:30  INFO 15612 --- [MedicalRecords-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICALRECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MedicalRecords-Service:8089: registering service...
+2025-09-01T16:02:21.598+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8089 (http) with context path '/'
+2025-09-01T16:02:21.602+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8089
+2025-09-01T16:02:21.647+05:30  INFO 15612 --- [MedicalRecords-Service] [restartedMain] c.s.m.MedicalRecordsServiceApplication   : Started MedicalRecordsServiceApplication in 11.926 seconds (process running for 13.495)
+2025-09-01T16:02:21.668+05:30  INFO 15612 --- [MedicalRecords-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICALRECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MedicalRecords-Service:8089 - registration status: 204
+2025-09-01T16:04:31.335+05:30  INFO 15612 --- [MedicalRecords-Service] [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-01T16:04:31.336+05:30  INFO 15612 --- [MedicalRecords-Service] [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-01T16:04:31.338+05:30  INFO 15612 --- [MedicalRecords-Service] [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-09-01T16:04:44.453+05:30 DEBUG 15612 --- [MedicalRecords-Service] [http-nio-8089-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        medical_records
+        (date, description, disease, medicines, patient_id) 
+    values
+        (?, ?, ?, ?, ?)
+2025-09-01T16:05:08.589+05:30 DEBUG 15612 --- [MedicalRecords-Service] [http-nio-8089-exec-4] org.hibernate.SQL                        : 
+    select
+        mr1_0.id,
+        mr1_0.date,
+        mr1_0.description,
+        mr1_0.disease,
+        mr1_0.medicines,
+        mr1_0.patient_id 
+    from
+        medical_records mr1_0 
+    where
+        mr1_0.patient_id=?
+2025-09-01T16:05:26.030+05:30 DEBUG 15612 --- [MedicalRecords-Service] [http-nio-8089-exec-5] org.hibernate.SQL                        : 
+    select
+        mr1_0.id,
+        mr1_0.date,
+        mr1_0.description,
+        mr1_0.disease,
+        mr1_0.medicines,
+        mr1_0.patient_id 
+    from
+        medical_records mr1_0
+2025-09-01T16:07:21.209+05:30  INFO 15612 --- [MedicalRecords-Service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:12:21.215+05:30  INFO 15612 --- [MedicalRecords-Service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:17:21.229+05:30  INFO 15612 --- [MedicalRecords-Service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:22:21.239+05:30  INFO 15612 --- [MedicalRecords-Service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:27:21.251+05:30  INFO 15612 --- [MedicalRecords-Service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:32:21.267+05:30  INFO 15612 --- [MedicalRecords-Service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:37:21.270+05:30  INFO 15612 --- [MedicalRecords-Service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:42:21.281+05:30  INFO 15612 --- [MedicalRecords-Service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:42:36.363+05:30  INFO 15612 --- [MedicalRecords-Service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-01T16:42:36.368+05:30  INFO 15612 --- [MedicalRecords-Service] [Thread-1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MEDICALRECORDS-SERVICE with eureka with status DOWN
+2025-09-01T16:42:36.369+05:30  INFO 15612 --- [MedicalRecords-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756725156369, current=DOWN, previous=UP]
+2025-09-01T16:42:36.370+05:30  INFO 15612 --- [MedicalRecords-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICALRECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MedicalRecords-Service:8089: registering service...
+2025-09-01T16:42:36.376+05:30  INFO 15612 --- [MedicalRecords-Service] [Thread-1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-01T16:42:36.394+05:30  INFO 15612 --- [MedicalRecords-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-01T16:42:36.407+05:30  INFO 15612 --- [MedicalRecords-Service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:42:36.407+05:30  INFO 15612 --- [MedicalRecords-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICALRECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MedicalRecords-Service:8089 - registration status: 204
+2025-09-01T16:42:36.430+05:30  INFO 15612 --- [MedicalRecords-Service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-01T16:42:36.444+05:30  INFO 15612 --- [MedicalRecords-Service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-01T16:42:36.446+05:30  INFO 15612 --- [MedicalRecords-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-09-01T16:42:39.455+05:30  INFO 15612 --- [MedicalRecords-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-09-01T16:42:39.530+05:30  INFO 15612 --- [MedicalRecords-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICALRECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MedicalRecords-Service:8089 - deregister  status: 200
+2025-09-01T16:42:39.531+05:30  INFO 15612 --- [MedicalRecords-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-09-01T16:42:40.934+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.s.m.MedicalRecordsServiceApplication   : Starting MedicalRecordsServiceApplication using Java 21.0.7 with PID 15612 (E:\STS Workspace\MedicalRecords-Service\target\classes started by asus in E:\STS Workspace\MedicalRecords-Service)
+2025-09-01T16:42:40.934+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.s.m.MedicalRecordsServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-09-01T16:42:40.939+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9093
+2025-09-01T16:42:40.940+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=MEDICAL-RECORDS-SERVICE, profiles=[default], label=null, version=14dadc3e11ddbe0225635e5e5bfece5c2269a127, state=
+2025-09-01T16:42:41.294+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T16:42:41.304+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interface.
+2025-09-01T16:42:41.394+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=314cae16-63a7-3570-8b86-970f702c39c3
+2025-09-01T16:42:41.484+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8089 (http)
+2025-09-01T16:42:41.486+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T16:42:41.486+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T16:42:41.514+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T16:42:41.514+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 574 ms
+2025-09-01T16:42:41.561+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T16:42:41.564+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T16:42:41.574+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T16:42:41.575+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-09-01T16:42:41.590+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1bc5da7b
+2025-09-01T16:42:41.591+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-09-01T16:42:41.593+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T16:42:41.630+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T16:42:41.648+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:42:41.745+05:30  WARN 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-01T16:42:41.902+05:30  WARN 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-01T16:42:41.940+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-09-01T16:42:41.965+05:30  WARN 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-09-01T16:42:41.997+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-09-01T16:42:42.001+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-09-01T16:42:42.001+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:42:42.002+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-09-01T16:42:42.002+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-09-01T16:42:42.002+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-09-01T16:42:42.002+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-09-01T16:42:42.002+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-09-01T16:42:42.002+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-09-01T16:42:42.002+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-09-01T16:42:42.045+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-09-01T16:42:42.046+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-09-01T16:42:42.046+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-09-01T16:42:42.046+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1756725162046 with initial instances count: 4
+2025-09-01T16:42:42.049+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MEDICAL-RECORDS-SERVICE with eureka with status UP
+2025-09-01T16:42:42.050+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756725162050, current=UP, previous=STARTING]
+2025-09-01T16:42:42.050+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8089: registering service...
+2025-09-01T16:42:42.055+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8089 (http) with context path '/'
+2025-09-01T16:42:42.056+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8089
+2025-09-01T16:42:42.072+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8089 - registration status: 204
+2025-09-01T16:42:42.074+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.s.m.MedicalRecordsServiceApplication   : Started MedicalRecordsServiceApplication in 2.448 seconds (process running for 2433.921)
+2025-09-01T16:42:44.360+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-01T16:42:44.362+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [Thread-7] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MEDICAL-RECORDS-SERVICE with eureka with status DOWN
+2025-09-01T16:42:44.364+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [Thread-7] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756725164364, current=DOWN, previous=UP]
+2025-09-01T16:42:44.364+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8089: registering service...
+2025-09-01T16:42:44.366+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-01T16:42:44.379+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8089 - registration status: 204
+2025-09-01T16:42:44.384+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-01T16:42:44.394+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:42:44.396+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-09-01T16:42:44.411+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-09-01T16:42:44.412+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [Thread-7] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-09-01T16:42:47.414+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [Thread-7] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-09-01T16:42:47.432+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [Thread-7] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8089 - deregister  status: 200
+2025-09-01T16:42:47.434+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [Thread-7] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-09-01T16:42:48.825+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.s.m.MedicalRecordsServiceApplication   : Starting MedicalRecordsServiceApplication using Java 21.0.7 with PID 15612 (E:\STS Workspace\MedicalRecords-Service\target\classes started by asus in E:\STS Workspace\MedicalRecords-Service)
+2025-09-01T16:42:48.826+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.s.m.MedicalRecordsServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-09-01T16:42:48.830+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9093
+2025-09-01T16:42:48.830+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=MEDICAL-RECORDS-SERVICE, profiles=[default], label=null, version=14dadc3e11ddbe0225635e5e5bfece5c2269a127, state=
+2025-09-01T16:42:49.102+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T16:42:49.113+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 1 JPA repository interface.
+2025-09-01T16:42:49.209+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=314cae16-63a7-3570-8b86-970f702c39c3
+2025-09-01T16:42:49.282+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2025-09-01T16:42:49.283+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T16:42:49.283+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T16:42:49.316+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T16:42:49.316+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 486 ms
+2025-09-01T16:42:49.349+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T16:42:49.352+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T16:42:49.360+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T16:42:49.361+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-09-01T16:42:49.376+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b9f12f6
+2025-09-01T16:42:49.377+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-09-01T16:42:49.378+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T16:42:49.412+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T16:42:49.421+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:42:49.516+05:30  WARN 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-01T16:42:49.645+05:30  WARN 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-01T16:42:49.680+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-09-01T16:42:49.702+05:30  WARN 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-09-01T16:42:49.729+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-09-01T16:42:49.735+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-09-01T16:42:49.736+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:42:49.736+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-09-01T16:42:49.736+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-09-01T16:42:49.736+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-09-01T16:42:49.736+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-09-01T16:42:49.736+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-09-01T16:42:49.736+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-09-01T16:42:49.736+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-09-01T16:42:49.762+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-09-01T16:42:49.762+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-09-01T16:42:49.763+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-09-01T16:42:49.764+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1756725169764 with initial instances count: 4
+2025-09-01T16:42:49.765+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MEDICAL-RECORDS-SERVICE with eureka with status UP
+2025-09-01T16:42:49.766+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756725169766, current=UP, previous=STARTING]
+2025-09-01T16:42:49.766+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8090: registering service...
+2025-09-01T16:42:49.770+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2025-09-01T16:42:49.771+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8090
+2025-09-01T16:42:49.781+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8090 - registration status: 204
+2025-09-01T16:42:49.783+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.s.m.MedicalRecordsServiceApplication   : Started MedicalRecordsServiceApplication in 2.217 seconds (process running for 2441.631)
+2025-09-01T16:42:49.785+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-01T16:47:49.751+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:52:49.761+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:57:49.774+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T17:02:49.789+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T17:07:49.799+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T17:12:49.803+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T17:17:49.818+05:30  INFO 15612 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T17:23:12.955+05:30  WARN 15612 --- [MEDICAL-RECORDS-SERVICE] [HikariPool-3:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=4m22s947ms948µs900ns).
+2025-09-01T18:22:25.892+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.s.m.MedicalRecordsServiceApplication   : Starting MedicalRecordsServiceApplication using Java 21.0.7 with PID 14372 (E:\STS Workspace\MedicalRecords-Service\target\classes started by asus in E:\STS Workspace\MedicalRecords-Service)
+2025-09-01T18:22:25.902+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.s.m.MedicalRecordsServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-09-01T18:22:25.965+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9093
+2025-09-01T18:22:25.965+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=MEDICAL-RECORDS-SERVICE, profiles=[default], label=null, version=14dadc3e11ddbe0225635e5e5bfece5c2269a127, state=
+2025-09-01T18:22:25.971+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-01T18:22:25.972+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-01T18:22:26.995+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T18:22:27.173+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 164 ms. Found 1 JPA repository interface.
+2025-09-01T18:22:27.604+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=314cae16-63a7-3570-8b86-970f702c39c3
+2025-09-01T18:22:28.483+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2025-09-01T18:22:28.509+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T18:22:28.510+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T18:22:28.688+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T18:22:28.689+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2715 ms
+2025-09-01T18:22:29.050+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T18:22:29.129+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-01T18:22:29.181+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T18:22:29.584+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T18:22:29.636+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-01T18:22:30.171+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@bdc1f00
+2025-09-01T18:22:30.174+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-01T18:22:30.279+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T18:22:31.334+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T18:22:31.392+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T18:22:31.767+05:30  WARN 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-01T18:22:32.395+05:30  WARN 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-01T18:22:32.463+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-09-01T18:22:32.505+05:30  WARN 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-09-01T18:22:32.574+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-09-01T18:22:32.601+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-09-01T18:22:32.604+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:22:32.614+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-09-01T18:22:32.615+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-09-01T18:22:32.615+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-09-01T18:22:32.615+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-09-01T18:22:32.615+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-09-01T18:22:32.616+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-09-01T18:22:32.616+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-09-01T18:22:32.942+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-09-01T18:22:32.945+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-09-01T18:22:32.949+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-09-01T18:22:32.951+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1756731152951 with initial instances count: 5
+2025-09-01T18:22:32.956+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MEDICAL-RECORDS-SERVICE with eureka with status UP
+2025-09-01T18:22:32.959+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756731152959, current=UP, previous=STARTING]
+2025-09-01T18:22:32.961+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8090: registering service...
+2025-09-01T18:22:32.988+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2025-09-01T18:22:32.989+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8090
+2025-09-01T18:22:33.008+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [restartedMain] c.s.m.MedicalRecordsServiceApplication   : Started MedicalRecordsServiceApplication in 9.396 seconds (process running for 10.824)
+2025-09-01T18:22:33.022+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8090 - registration status: 204
+2025-09-01T18:27:32.619+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:32:32.631+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:37:32.647+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:42:32.664+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:47:32.668+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:52:32.673+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T18:57:32.678+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:02:32.693+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:07:32.704+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:12:32.718+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:17:32.725+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:22:32.739+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:27:32.755+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:32:32.757+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:37:32.768+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:42:32.773+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:47:32.778+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:52:32.783+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T19:57:32.804+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:02:32.815+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:07:32.817+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:12:32.822+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:17:32.833+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:22:32.838+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:27:32.848+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:32:32.853+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:37:32.862+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:42:32.874+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:47:32.889+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:52:32.899+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T20:57:32.915+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:02:32.925+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:07:32.931+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:12:32.940+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:17:32.942+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:22:32.948+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:27:32.962+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:32:32.973+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:37:32.976+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:42:32.996+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:47:33.010+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:52:33.010+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T21:57:33.018+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:02:33.022+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:07:33.031+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:12:33.048+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:17:33.060+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:22:33.072+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:27:33.077+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:32:33.090+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T22:36:11.969+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [RMI TCP Connection(264)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-09-01T22:36:12.001+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [RMI TCP Connection(264)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MEDICAL-RECORDS-SERVICE with eureka with status DOWN
+2025-09-01T22:36:12.001+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [RMI TCP Connection(264)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756746372001, current=DOWN, previous=UP]
+2025-09-01T22:36:12.002+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8090: registering service...
+2025-09-01T22:36:12.042+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [RMI TCP Connection(264)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-01T22:36:12.056+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-01T22:36:12.071+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [RMI TCP Connection(264)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T22:36:12.075+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/MEDICAL-RECORDS-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/MEDICAL-RECORDS-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:205)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 21 more
+
+2025-09-01T22:36:12.075+05:30  WARN 14372 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/MEDICAL-RECORDS-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2025-09-01T22:36:12.093+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [RMI TCP Connection(264)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-01T22:36:12.096+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/MEDICAL-RECORDS-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/MEDICAL-RECORDS-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:205)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 22 more
+
+2025-09-01T22:36:12.097+05:30  WARN 14372 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/MEDICAL-RECORDS-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2025-09-01T22:36:12.099+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [RMI TCP Connection(264)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-01T22:36:12.100+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [RMI TCP Connection(264)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-09-01T22:36:12.097+05:30  WARN 14372 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8090 - registration failed Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105) ~[eureka-client-2.0.4.jar:2.0.4]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-09-01T22:36:12.112+05:30  WARN 14372 --- [MEDICAL-RECORDS-SERVICE] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105) ~[eureka-client-2.0.4.jar:2.0.4]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-09-01T22:36:12.114+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [RMI TCP Connection(264)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-09-01T22:36:12.160+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [RMI TCP Connection(264)-127.0.0.1] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8090": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8090": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:100)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:798)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:748)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1481)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:707)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1474)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:179)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:97)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193)
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:115)
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:52)
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:236)
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138)
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:803)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:205)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 69 more
+
+2025-09-01T22:36:12.161+05:30  WARN 14372 --- [MEDICAL-RECORDS-SERVICE] [RMI TCP Connection(264)-127.0.0.1] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8090": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2025-09-01T22:36:12.161+05:30 ERROR 14372 --- [MEDICAL-RECORDS-SERVICE] [RMI TCP Connection(264)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MEDICAL-RECORDS-SERVICE/DESKTOP-GVALKHS.mshome.net:MEDICAL-RECORDS-SERVICE:8090 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919) ~[eureka-client-2.0.4.jar:2.0.4]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900) ~[eureka-client-2.0.4.jar:2.0.4]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387) ~[spring-cloud-context-4.3.0.jar:4.3.0]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134) ~[spring-cloud-context-4.3.0.jar:4.3.0]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:798) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:748) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1481) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:707) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1474) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:179) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160) ~[spring-boot-3.5.5.jar:3.5.5]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:97) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:115) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:52) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:236) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252) ~[na:na]
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:803) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802) ~[na:na]
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472) ~[na:na]
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310) ~[na:na]
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405) ~[na:na]
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360) ~[na:na]
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200) ~[na:na]
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197) ~[na:na]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714) ~[na:na]
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721) ~[na:na]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-09-01T22:36:12.164+05:30  INFO 14372 --- [MEDICAL-RECORDS-SERVICE] [RMI TCP Connection(264)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

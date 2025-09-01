@@ -1,0 +1,106 @@
+package com.example.surya.filters;
+
+import com.example.surya.utils.JwtUtil;
+import org.springframework.cloud.gateway.filter.GatewayFilter;
+import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.http.server.reactive.ServerHttpResponse;
+import org.springframework.stereotype.Component;
+import org.springframework.web.server.ServerWebExchange;
+import reactor.core.publisher.Mono;
+
+@Component
+public class JwtAuthenticationFilter extends AbstractGatewayFilterFactory<JwtAuthenticationFilter.Config> {
+
+    private final JwtUtil jwtUtil;
+
+    public JwtAuthenticationFilter(JwtUtil jwtUtil) {
+        super(Config.class);
+        this.jwtUtil = jwtUtil;
+    }
+
+    @Override
+    public GatewayFilter apply(Config config) {
+        return (exchange, chain) -> {
+            ServerHttpRequest request = exchange.getRequest();
+            
+            // Skip authentication for auth endpoints
+            if (request.getURI().getPath().contains("/api/auth/")) {
+                return chain.filter(exchange);
+            }
+            
+            // Check if Authorization header exists
+            if (!request.getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
+                return onError(exchange, "No Authorization header", HttpStatus.UNAUTHORIZED);
+            }
+
+            String authHeader = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
+            if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+                return onError(exchange, "Invalid Authorization header format", HttpStatus.UNAUTHORIZED);
+            }
+
+            String token = authHeader.substring(7);
+            
+            // Validate JWT token
+            if (!jwtUtil.validateToken(token)) {
+                return onError(exchange, "Invalid or expired JWT token", HttpStatus.UNAUTHORIZED);
+            }
+            
+            // Check role-based access if required
+            if (config.isRequiresRole()) {
+                String role = jwtUtil.extractRole(token);
+                if (role == null || !isAuthorized(role, config.getRequiredRole())) {
+                    return onError(exchange, "Insufficient permissions", HttpStatus.FORBIDDEN);
+                }
+            }
+            
+            // Add user info to headers for downstream services
+            ServerHttpRequest modifiedRequest = request.mutate()
+                    .header("X-Auth-User-Email", jwtUtil.extractUsername(token))
+                    .header("X-Auth-User-Role", jwtUtil.extractRole(token))
+                    .build();
+            
+            return chain.filter(exchange.mutate().request(modifiedRequest).build());
+        };
+    }
+
+    private boolean isAuthorized(String userRole, String requiredRole) {
+        // Admin can access everything
+        if (userRole.equals("ADMIN")) {
+            return true;
+        }
+        
+        // For USER role, only allow access if the required role is USER
+        return userRole.equals(requiredRole);
+    }
+
+    private Mono<Void> onError(ServerWebExchange exchange, String message, HttpStatus status) {
+        ServerHttpResponse response = exchange.getResponse();
+        response.setStatusCode(status);
+        return response.setComplete();
+    }
+
+    public static class Config {
+        private boolean requiresRole = false;
+        private String requiredRole;
+
+        public boolean isRequiresRole() {
+            return requiresRole;
+        }
+
+        public void setRequiresRole(boolean requiresRole) {
+            this.requiresRole = requiresRole;
+        }
+
+        public String getRequiredRole() {
+            return requiredRole;
+        }
+
+        public void setRequiredRole(String requiredRole) {
+            this.requiredRole = requiredRole;
+            this.requiresRole = true;
+        }
+    }
+}

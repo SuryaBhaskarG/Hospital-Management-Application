@@ -1,0 +1,432 @@
+2025-09-01T16:49:53.774+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : Starting AppointmentServiceApplication using Java 21.0.7 with PID 10672 (E:\STS Workspace\Appointment-Service\target\classes started by asus in E:\STS Workspace\Appointment-Service)
+2025-09-01T16:49:53.777+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-09-01T16:49:53.828+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9093
+2025-09-01T16:49:53.828+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=Appointment-Service, profiles=[default], label=null, version=14dadc3e11ddbe0225635e5e5bfece5c2269a127, state=
+2025-09-01T16:49:53.838+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-01T16:49:53.838+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-01T16:49:54.692+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T16:49:54.848+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 145 ms. Found 1 JPA repository interface.
+2025-09-01T16:49:55.089+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d81735aa-0825-3f1e-ac46-aac665e4e342
+2025-09-01T16:49:55.621+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2025-09-01T16:49:55.645+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T16:49:55.645+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T16:49:55.716+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T16:49:55.717+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1878 ms
+2025-09-01T16:49:55.923+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T16:49:55.985+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-01T16:49:56.021+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T16:49:56.312+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T16:49:56.347+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-01T16:49:56.710+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2684b157
+2025-09-01T16:49:56.712+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-01T16:49:56.801+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T16:49:57.659+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T16:49:57.735+05:30 DEBUG 10672 --- [Appointment-Service] [restartedMain] org.hibernate.SQL                        : 
+    create table appointments (
+        id bigint not null auto_increment,
+        appointment_date date,
+        doctor_id bigint,
+        doctor_name varchar(255),
+        patient_id bigint,
+        patient_name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2025-09-01T16:49:57.772+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:49:58.409+05:30  WARN 10672 --- [Appointment-Service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-01T16:49:59.432+05:30  WARN 10672 --- [Appointment-Service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-01T16:49:59.559+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-09-01T16:49:59.624+05:30  WARN 10672 --- [Appointment-Service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-09-01T16:49:59.742+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-09-01T16:49:59.795+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-09-01T16:49:59.802+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:49:59.817+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-09-01T16:49:59.817+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-09-01T16:49:59.817+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-09-01T16:49:59.817+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-09-01T16:49:59.818+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-09-01T16:49:59.818+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-09-01T16:49:59.818+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-09-01T16:50:00.107+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-09-01T16:50:00.109+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-09-01T16:50:00.112+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-09-01T16:50:00.112+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1756725600112 with initial instances count: 4
+2025-09-01T16:50:00.118+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application APPOINTMENT-SERVICE with eureka with status UP
+2025-09-01T16:50:00.119+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756725600119, current=UP, previous=STARTING]
+2025-09-01T16:50:00.121+05:30  INFO 10672 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8090: registering service...
+2025-09-01T16:50:00.126+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application APPOINTMENT-SERVICE with eureka with status DOWN
+2025-09-01T16:50:00.126+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756725600126, current=DOWN, previous=UP]
+2025-09-01T16:50:00.127+05:30  WARN 10672 --- [Appointment-Service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-09-01T16:50:00.130+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:50:00.136+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-01T16:50:00.148+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-01T16:50:00.149+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-09-01T16:50:00.171+05:30  INFO 10672 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8090 - registration status: 204
+2025-09-01T16:50:00.172+05:30  INFO 10672 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8090: registering service...
+2025-09-01T16:50:00.176+05:30  INFO 10672 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8090 - registration status: 204
+2025-09-01T16:50:00.177+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-09-01T16:50:00.183+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8090 - deregister  status: 200
+2025-09-01T16:50:00.184+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-09-01T16:50:00.200+05:30  INFO 10672 --- [Appointment-Service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-09-01T16:50:00.228+05:30 ERROR 10672 --- [Appointment-Service] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8090 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8090 or configure this application to listen on another port.
+
+2025-09-01T16:50:37.839+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : Starting AppointmentServiceApplication using Java 21.0.7 with PID 9980 (E:\STS Workspace\Appointment-Service\target\classes started by asus in E:\STS Workspace\Appointment-Service)
+2025-09-01T16:50:37.842+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-09-01T16:50:37.907+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9093
+2025-09-01T16:50:37.908+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=Appointment-Service, profiles=[default], label=null, version=14dadc3e11ddbe0225635e5e5bfece5c2269a127, state=
+2025-09-01T16:50:37.912+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-01T16:50:37.918+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-01T16:50:38.761+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T16:50:38.934+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 160 ms. Found 1 JPA repository interface.
+2025-09-01T16:50:39.204+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d81735aa-0825-3f1e-ac46-aac665e4e342
+2025-09-01T16:50:39.694+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8094 (http)
+2025-09-01T16:50:39.711+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T16:50:39.711+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T16:50:39.783+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T16:50:39.784+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1865 ms
+2025-09-01T16:50:39.986+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T16:50:40.032+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-01T16:50:40.063+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T16:50:40.353+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T16:50:40.386+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-01T16:50:40.750+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@8aef573
+2025-09-01T16:50:40.753+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-01T16:50:40.843+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T16:50:41.645+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T16:50:41.698+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:50:42.191+05:30  WARN 9980 --- [Appointment-Service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-01T16:50:42.932+05:30  WARN 9980 --- [Appointment-Service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-01T16:50:42.996+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-09-01T16:50:43.036+05:30  WARN 9980 --- [Appointment-Service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-09-01T16:50:43.118+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-09-01T16:50:43.144+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-09-01T16:50:43.148+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:50:43.156+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-09-01T16:50:43.156+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-09-01T16:50:43.156+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-09-01T16:50:43.157+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-09-01T16:50:43.157+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-09-01T16:50:43.157+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-09-01T16:50:43.157+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-09-01T16:50:43.417+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-09-01T16:50:43.419+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-09-01T16:50:43.421+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-09-01T16:50:43.423+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1756725643422 with initial instances count: 4
+2025-09-01T16:50:43.427+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application APPOINTMENT-SERVICE with eureka with status UP
+2025-09-01T16:50:43.429+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756725643429, current=UP, previous=STARTING]
+2025-09-01T16:50:43.431+05:30  INFO 9980 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094: registering service...
+2025-09-01T16:50:43.454+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8094 (http) with context path '/'
+2025-09-01T16:50:43.456+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8094
+2025-09-01T16:50:43.475+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : Started AppointmentServiceApplication in 7.76 seconds (process running for 8.985)
+2025-09-01T16:50:43.480+05:30  INFO 9980 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094 - registration status: 204
+2025-09-01T16:52:08.578+05:30  INFO 9980 --- [Appointment-Service] [http-nio-8094-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-01T16:52:08.578+05:30  INFO 9980 --- [Appointment-Service] [http-nio-8094-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-01T16:52:08.578+05:30  INFO 9980 --- [Appointment-Service] [http-nio-8094-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-09-01T16:54:53.985+05:30  INFO 9980 --- [Appointment-Service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 5 class path changes (1 addition, 1 deletion, 3 modifications)
+2025-09-01T16:54:53.990+05:30  INFO 9980 --- [Appointment-Service] [Thread-1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application APPOINTMENT-SERVICE with eureka with status DOWN
+2025-09-01T16:54:53.990+05:30  INFO 9980 --- [Appointment-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756725893990, current=DOWN, previous=UP]
+2025-09-01T16:54:53.991+05:30  INFO 9980 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094: registering service...
+2025-09-01T16:54:53.996+05:30  INFO 9980 --- [Appointment-Service] [Thread-1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-01T16:54:54.013+05:30  INFO 9980 --- [Appointment-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-01T16:54:54.015+05:30  INFO 9980 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094 - registration status: 204
+2025-09-01T16:54:54.028+05:30  INFO 9980 --- [Appointment-Service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:54:54.035+05:30  INFO 9980 --- [Appointment-Service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-01T16:54:54.054+05:30  INFO 9980 --- [Appointment-Service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-01T16:54:54.056+05:30  INFO 9980 --- [Appointment-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-09-01T16:54:57.070+05:30  INFO 9980 --- [Appointment-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-09-01T16:54:57.089+05:30  INFO 9980 --- [Appointment-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094 - deregister  status: 200
+2025-09-01T16:54:57.090+05:30  INFO 9980 --- [Appointment-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-09-01T16:54:58.523+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : Starting AppointmentServiceApplication using Java 21.0.7 with PID 9980 (E:\STS Workspace\Appointment-Service\target\classes started by asus in E:\STS Workspace\Appointment-Service)
+2025-09-01T16:54:58.524+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-09-01T16:54:58.529+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9093
+2025-09-01T16:54:58.530+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=Appointment-Service, profiles=[default], label=null, version=14dadc3e11ddbe0225635e5e5bfece5c2269a127, state=
+2025-09-01T16:54:58.975+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T16:54:58.987+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 1 JPA repository interface.
+2025-09-01T16:54:59.087+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d81735aa-0825-3f1e-ac46-aac665e4e342
+2025-09-01T16:54:59.179+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8094 (http)
+2025-09-01T16:54:59.180+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T16:54:59.181+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T16:54:59.231+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T16:54:59.231+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 700 ms
+2025-09-01T16:54:59.277+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T16:54:59.280+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T16:54:59.292+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T16:54:59.294+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-09-01T16:54:59.315+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4d197668
+2025-09-01T16:54:59.316+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-09-01T16:54:59.318+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T16:54:59.367+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T16:54:59.379+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:54:59.458+05:30  WARN 9980 --- [Appointment-Service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-01T16:54:59.635+05:30  WARN 9980 --- [Appointment-Service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-01T16:54:59.678+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-09-01T16:54:59.696+05:30  WARN 9980 --- [Appointment-Service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-09-01T16:54:59.735+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-09-01T16:54:59.738+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-09-01T16:54:59.738+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:54:59.739+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-09-01T16:54:59.739+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-09-01T16:54:59.739+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-09-01T16:54:59.739+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-09-01T16:54:59.739+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-09-01T16:54:59.739+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-09-01T16:54:59.739+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-09-01T16:54:59.797+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-09-01T16:54:59.797+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-09-01T16:54:59.798+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-09-01T16:54:59.798+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1756725899798 with initial instances count: 5
+2025-09-01T16:54:59.801+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application APPOINTMENT-SERVICE with eureka with status UP
+2025-09-01T16:54:59.801+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756725899801, current=UP, previous=STARTING]
+2025-09-01T16:54:59.802+05:30  INFO 9980 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094: registering service...
+2025-09-01T16:54:59.806+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8094 (http) with context path '/'
+2025-09-01T16:54:59.808+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8094
+2025-09-01T16:54:59.823+05:30  INFO 9980 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094 - registration status: 204
+2025-09-01T16:54:59.826+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : Started AppointmentServiceApplication in 2.592 seconds (process running for 265.337)
+2025-09-01T16:54:59.830+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-01T16:55:09.636+05:30  INFO 9980 --- [Appointment-Service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 8 class path changes (2 additions, 2 deletions, 4 modifications)
+2025-09-01T16:55:09.638+05:30  INFO 9980 --- [Appointment-Service] [Thread-7] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application APPOINTMENT-SERVICE with eureka with status DOWN
+2025-09-01T16:55:09.638+05:30  INFO 9980 --- [Appointment-Service] [Thread-7] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756725909638, current=DOWN, previous=UP]
+2025-09-01T16:55:09.639+05:30  INFO 9980 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094: registering service...
+2025-09-01T16:55:09.640+05:30  INFO 9980 --- [Appointment-Service] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-01T16:55:09.653+05:30  INFO 9980 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094 - registration status: 204
+2025-09-01T16:55:09.657+05:30  INFO 9980 --- [Appointment-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-01T16:55:09.667+05:30  INFO 9980 --- [Appointment-Service] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:55:09.668+05:30  INFO 9980 --- [Appointment-Service] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-09-01T16:55:09.681+05:30  INFO 9980 --- [Appointment-Service] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-09-01T16:55:09.682+05:30  INFO 9980 --- [Appointment-Service] [Thread-7] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-09-01T16:55:12.683+05:30  INFO 9980 --- [Appointment-Service] [Thread-7] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-09-01T16:55:12.702+05:30  INFO 9980 --- [Appointment-Service] [Thread-7] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094 - deregister  status: 200
+2025-09-01T16:55:12.702+05:30  INFO 9980 --- [Appointment-Service] [Thread-7] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-09-01T16:55:14.000+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : Starting AppointmentServiceApplication using Java 21.0.7 with PID 9980 (E:\STS Workspace\Appointment-Service\target\classes started by asus in E:\STS Workspace\Appointment-Service)
+2025-09-01T16:55:14.000+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-09-01T16:55:14.005+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9093
+2025-09-01T16:55:14.005+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=Appointment-Service, profiles=[default], label=null, version=14dadc3e11ddbe0225635e5e5bfece5c2269a127, state=
+2025-09-01T16:55:14.330+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T16:55:14.341+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interface.
+2025-09-01T16:55:14.434+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d81735aa-0825-3f1e-ac46-aac665e4e342
+2025-09-01T16:55:14.514+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8094 (http)
+2025-09-01T16:55:14.516+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T16:55:14.516+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T16:55:14.559+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T16:55:14.560+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 555 ms
+2025-09-01T16:55:14.601+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T16:55:14.603+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T16:55:14.612+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T16:55:14.613+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-09-01T16:55:14.629+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@61dba696
+2025-09-01T16:55:14.630+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-09-01T16:55:14.631+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T16:55:14.669+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T16:55:14.679+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:55:14.741+05:30  WARN 9980 --- [Appointment-Service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-01T16:55:14.867+05:30  WARN 9980 --- [Appointment-Service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-01T16:55:14.900+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-09-01T16:55:14.913+05:30  WARN 9980 --- [Appointment-Service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-09-01T16:55:14.939+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-09-01T16:55:14.941+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-09-01T16:55:14.942+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:55:14.942+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-09-01T16:55:14.942+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-09-01T16:55:14.942+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-09-01T16:55:14.942+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-09-01T16:55:14.942+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-09-01T16:55:14.942+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-09-01T16:55:14.942+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-09-01T16:55:14.969+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-09-01T16:55:14.970+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-09-01T16:55:14.970+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-09-01T16:55:14.970+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1756725914970 with initial instances count: 5
+2025-09-01T16:55:14.973+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application APPOINTMENT-SERVICE with eureka with status UP
+2025-09-01T16:55:14.973+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756725914973, current=UP, previous=STARTING]
+2025-09-01T16:55:14.974+05:30  INFO 9980 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094: registering service...
+2025-09-01T16:55:14.977+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8094 (http) with context path '/'
+2025-09-01T16:55:14.978+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8094
+2025-09-01T16:55:14.989+05:30  INFO 9980 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094 - registration status: 204
+2025-09-01T16:55:14.993+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : Started AppointmentServiceApplication in 2.18 seconds (process running for 280.503)
+2025-09-01T16:55:14.995+05:30  INFO 9980 --- [Appointment-Service] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-01T16:55:19.288+05:30  INFO 9980 --- [Appointment-Service] [http-nio-8094-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-01T16:55:19.289+05:30  INFO 9980 --- [Appointment-Service] [http-nio-8094-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-01T16:55:19.293+05:30  INFO 9980 --- [Appointment-Service] [http-nio-8094-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-09-01T16:55:24.727+05:30  INFO 9980 --- [Appointment-Service] [RMI TCP Connection(16)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-09-01T16:55:24.727+05:30  INFO 9980 --- [Appointment-Service] [RMI TCP Connection(16)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application APPOINTMENT-SERVICE with eureka with status DOWN
+2025-09-01T16:55:24.728+05:30  INFO 9980 --- [Appointment-Service] [RMI TCP Connection(16)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756725924728, current=DOWN, previous=UP]
+2025-09-01T16:55:24.728+05:30  INFO 9980 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094: registering service...
+2025-09-01T16:55:24.728+05:30  INFO 9980 --- [Appointment-Service] [RMI TCP Connection(16)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-01T16:55:24.737+05:30  INFO 9980 --- [Appointment-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-01T16:55:24.738+05:30  INFO 9980 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094 - registration status: 204
+2025-09-01T16:55:24.740+05:30  INFO 9980 --- [Appointment-Service] [RMI TCP Connection(16)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:55:24.741+05:30  INFO 9980 --- [Appointment-Service] [RMI TCP Connection(16)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-09-01T16:55:24.745+05:30  INFO 9980 --- [Appointment-Service] [RMI TCP Connection(16)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2025-09-01T16:55:24.746+05:30  INFO 9980 --- [Appointment-Service] [RMI TCP Connection(16)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-09-01T16:55:27.756+05:30  INFO 9980 --- [Appointment-Service] [RMI TCP Connection(16)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-09-01T16:55:27.775+05:30  INFO 9980 --- [Appointment-Service] [RMI TCP Connection(16)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094 - deregister  status: 200
+2025-09-01T16:55:27.776+05:30  INFO 9980 --- [Appointment-Service] [RMI TCP Connection(16)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-09-01T16:55:34.922+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : Starting AppointmentServiceApplication using Java 21.0.7 with PID 7832 (E:\STS Workspace\Appointment-Service\target\classes started by asus in E:\STS Workspace\Appointment-Service)
+2025-09-01T16:55:34.924+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-09-01T16:55:34.972+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9093
+2025-09-01T16:55:34.972+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=Appointment-Service, profiles=[default], label=null, version=14dadc3e11ddbe0225635e5e5bfece5c2269a127, state=
+2025-09-01T16:55:34.974+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-01T16:55:34.974+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-01T16:55:35.754+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T16:55:35.942+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 176 ms. Found 1 JPA repository interface.
+2025-09-01T16:55:36.237+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d81735aa-0825-3f1e-ac46-aac665e4e342
+2025-09-01T16:55:36.869+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8094 (http)
+2025-09-01T16:55:36.891+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T16:55:36.891+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T16:55:36.978+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T16:55:36.979+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2004 ms
+2025-09-01T16:55:37.207+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T16:55:37.256+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-01T16:55:37.293+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T16:55:37.606+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T16:55:37.638+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-01T16:55:38.074+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a83e95a
+2025-09-01T16:55:38.077+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-01T16:55:38.179+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T16:55:38.980+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T16:55:39.036+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:55:39.384+05:30  WARN 7832 --- [Appointment-Service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-01T16:55:39.931+05:30  WARN 7832 --- [Appointment-Service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-01T16:55:39.999+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-09-01T16:55:40.045+05:30  WARN 7832 --- [Appointment-Service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-09-01T16:55:40.124+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-09-01T16:55:40.153+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-09-01T16:55:40.158+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T16:55:40.166+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-09-01T16:55:40.166+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-09-01T16:55:40.166+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-09-01T16:55:40.166+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-09-01T16:55:40.166+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-09-01T16:55:40.166+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-09-01T16:55:40.166+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-09-01T16:55:40.448+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-09-01T16:55:40.450+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-09-01T16:55:40.452+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-09-01T16:55:40.454+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1756725940454 with initial instances count: 4
+2025-09-01T16:55:40.458+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application APPOINTMENT-SERVICE with eureka with status UP
+2025-09-01T16:55:40.459+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756725940459, current=UP, previous=STARTING]
+2025-09-01T16:55:40.461+05:30  INFO 7832 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094: registering service...
+2025-09-01T16:55:40.482+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8094 (http) with context path '/'
+2025-09-01T16:55:40.484+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8094
+2025-09-01T16:55:40.501+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : Started AppointmentServiceApplication in 7.727 seconds (process running for 8.837)
+2025-09-01T16:55:40.510+05:30  INFO 7832 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094 - registration status: 204
+2025-09-01T16:55:44.087+05:30  INFO 7832 --- [Appointment-Service] [http-nio-8094-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-01T16:55:44.088+05:30  INFO 7832 --- [Appointment-Service] [http-nio-8094-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-01T16:55:44.091+05:30  INFO 7832 --- [Appointment-Service] [http-nio-8094-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-09-01T16:56:40.349+05:30  INFO 7832 --- [Appointment-Service] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 9 class path changes (3 additions, 3 deletions, 3 modifications)
+2025-09-01T16:56:40.354+05:30  INFO 7832 --- [Appointment-Service] [Thread-1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application APPOINTMENT-SERVICE with eureka with status DOWN
+2025-09-01T16:56:40.354+05:30  INFO 7832 --- [Appointment-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756726000354, current=DOWN, previous=UP]
+2025-09-01T16:56:40.355+05:30  INFO 7832 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094: registering service...
+2025-09-01T16:56:40.361+05:30  INFO 7832 --- [Appointment-Service] [Thread-1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-01T16:56:40.379+05:30  INFO 7832 --- [Appointment-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-01T16:56:40.379+05:30  INFO 7832 --- [Appointment-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094 - registration status: 204
+2025-09-01T16:56:40.393+05:30  INFO 7832 --- [Appointment-Service] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:56:40.400+05:30  INFO 7832 --- [Appointment-Service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-01T16:56:40.424+05:30  INFO 7832 --- [Appointment-Service] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-01T16:56:40.426+05:30  INFO 7832 --- [Appointment-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-09-01T16:56:43.442+05:30  INFO 7832 --- [Appointment-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-09-01T16:56:43.442+05:30  WARN 7832 --- [Appointment-Service] [DiscoveryClient-%d] c.netflix.discovery.TimedSupervisorTask  : task supervisor shutting down, can't accept the task
+2025-09-01T16:56:43.460+05:30  INFO 7832 --- [Appointment-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPOINTMENT-SERVICE/DESKTOP-GVALKHS.mshome.net:Appointment-Service:8094 - deregister  status: 200
+2025-09-01T16:56:43.461+05:30  INFO 7832 --- [Appointment-Service] [Thread-1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-09-01T16:56:44.904+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : Starting AppointmentServiceApplication using Java 21.0.7 with PID 7832 (E:\STS Workspace\Appointment-Service\target\classes started by asus in E:\STS Workspace\Appointment-Service)
+2025-09-01T16:56:44.905+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] c.s.a.AppointmentServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-09-01T16:56:44.910+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9093
+2025-09-01T16:56:44.911+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=Appointment-Service, profiles=[default], label=null, version=14dadc3e11ddbe0225635e5e5bfece5c2269a127, state=
+2025-09-01T16:56:45.384+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T16:56:45.396+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
+2025-09-01T16:56:45.490+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1ad4d48e-56b3-3325-9699-babb5492fd7d
+2025-09-01T16:56:45.624+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8094 (http)
+2025-09-01T16:56:45.628+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T16:56:45.628+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T16:56:45.661+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T16:56:45.662+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 751 ms
+2025-09-01T16:56:45.701+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T16:56:45.704+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T16:56:45.713+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T16:56:45.715+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-09-01T16:56:45.733+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@49585162
+2025-09-01T16:56:45.734+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-09-01T16:56:45.735+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T16:56:45.773+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T16:56:45.783+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:56:45.841+05:30  WARN 7832 --- [Appointment-Service] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appointmentController': Unsatisfied dependency expressed through field 'patientClient': No qualifying bean of type 'com.surya.appointment.feign.PatientClient' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-09-01T16:56:45.842+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T16:56:45.842+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-09-01T16:56:45.844+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-09-01T16:56:45.844+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-09-01T16:56:45.851+05:30  INFO 7832 --- [Appointment-Service] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-09-01T16:56:45.875+05:30 ERROR 7832 --- [Appointment-Service] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field patientClient in com.surya.appointment.feign.controller.AppointmentController required a bean of type 'com.surya.appointment.feign.PatientClient' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.surya.appointment.feign.PatientClient' in your configuration.
+

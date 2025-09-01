@@ -1,0 +1,5 @@
+package com.surya.doctor.repository;
+
+public interface DoctorRepository {
+
+}

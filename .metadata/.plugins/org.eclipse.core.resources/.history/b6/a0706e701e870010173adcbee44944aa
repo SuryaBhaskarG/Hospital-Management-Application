@@ -1,0 +1,5 @@
+package com.surya.medicalRecords.service;
+
+public class MedicalRecordServiceImpl {
+
+}

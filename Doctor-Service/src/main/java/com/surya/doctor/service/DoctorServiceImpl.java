@@ -1,0 +1,36 @@
+package com.surya.doctor.service;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.surya.doctor.entity.Doctor;
+import com.surya.doctor.repository.DoctorRepository;
+
+import lombok.RequiredArgsConstructor;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+@RequiredArgsConstructor
+@Transactional
+public class DoctorServiceImpl implements DoctorService {
+
+    private final DoctorRepository doctorRepository;
+
+    @Override
+    public Doctor createDoctor(Doctor doctor) {
+        return doctorRepository.save(doctor);
+    }
+
+    @Override
+    public Doctor getDoctorById(Long id) {
+        Optional<Doctor> doctor = doctorRepository.findById(id);
+        return doctor.orElse(null); 
+    }
+
+    @Override
+    public List<Doctor> getAllDoctors() {
+        return doctorRepository.findAll();
+    }
+}

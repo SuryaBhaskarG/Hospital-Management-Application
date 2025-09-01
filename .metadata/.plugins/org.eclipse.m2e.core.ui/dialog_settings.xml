@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="E:\STS Workspace\Payment-Service"/>
+			<item value="C:\Users\asus\Downloads\Wipro-QuizApplication-Monorepo-main\Wipro-QuizApplication-Monorepo-main"/>
+			<item value="C:\Users\asus\Downloads\rest-semi-main\rest-semi-main\User-App"/>
+			<item value="C:\Users\asus\Desktop\Quiz-Microservices-Industrial-main\Quiz-Microservices-Industrial-main\Quizs-Service"/>
+			<item value="C:\Users\asus\Desktop\Quiz-Microservices-Industrial-main\Quiz-Microservices-Industrial-main\Questions-Service"/>
+			<item value="C:\Users\asus\Desktop\Quiz-Microservices-Industrial-main\Quiz-Microservices-Industrial-main\DiscoveryServices"/>
+			<item value="C:\Users\asus\Desktop\Quiz-Microservices-Industrial-main\Quiz-Microservices-Industrial-main\Config-Server"/>
+			<item value="C:\Users\asus\Desktop\Quiz-Microservices-Industrial-main\Quiz-Microservices-Industrial-main\API-GateWay"/>
+			<item value="C:\Users\asus\Desktop\UserAuth-Server"/>
+			<item value="C:\Users\asus\Desktop\CarerOutfit-Server"/>
+			<item value="C:\Users\asus\Desktop\User-Authentication-Service"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

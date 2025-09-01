@@ -1,0 +1,15 @@
+package com.surya.feign;
+
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.Map;
+
+@FeignClient(name = "PATIENT-SERVICE", url = "http://localhost:8088")
+public interface PatientClient {
+
+    @GetMapping("/api/v1/patients/{id}")
+    Map<String, Object> getPatientById(@PathVariable("id") Long id);
+}
